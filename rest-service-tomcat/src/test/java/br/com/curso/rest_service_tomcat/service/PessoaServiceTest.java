@@ -5,11 +5,12 @@ import org.junit.Test;
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+
 public class PessoaServiceTest extends TemplateTest{
 	
 	@Test
 	public void deve_retornar_luiz_como_pessoa(){
-	
+
 		given()
 			.param("cpf", "12312312345")
 			.get("pessoa")
@@ -23,11 +24,11 @@ public class PessoaServiceTest extends TemplateTest{
 	@Test
 	public void deve_retornar_404_caso_cliente_nao_exista(){
 		given()
-		.param("cpf", "12")
-		.get("pessoa")
-	.then()
-		.assertThat()
-		.statusCode(404);
+			.param("cpf", "12")
+			.get("pessoa")
+		.then()
+			.assertThat()
+			.statusCode(404);
 	}
 
 }

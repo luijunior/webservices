@@ -1,0 +1,1 @@
+wsimport -keep -s src/main/java/ -p br.com.curso.soap_services ./wsdl-sample.wsdl 

@@ -38,5 +38,23 @@ public class PessoaEmMemoria implements PessoaDao{
 		return pessoas.add(pessoa);
 	}
 	
+	@Override
+	public Boolean atualiza(Pessoa pessoa){
+		Pessoa pessoaAtualiza = busca(pessoa.getCpf());
+		pessoaAtualiza.setNome(pessoa.getNome());
+		return true;
+	}
+
+	@Override
+	public Boolean remove(String cpf) {
+		Pessoa pessoa = pessoas.stream()
+			   .filter(c -> c.getCpf().equals(cpf))
+			   .collect(Collectors.toList())
+			   .get(0);
+		pessoas.remove(pessoas.indexOf(pessoa));
+		return true;
+		
+	}
+	
 
 }

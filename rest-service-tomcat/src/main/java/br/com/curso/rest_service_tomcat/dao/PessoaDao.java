@@ -6,5 +6,7 @@ public interface PessoaDao {
 	
 	Pessoa busca(String cpf);
 	Boolean cadastra(Pessoa pessoa);
+	Boolean atualiza(Pessoa pessoa);
+	Boolean remove(String cpf);
 
 }
